@@ -8,7 +8,7 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
    - Exercise
    - More exercises
      
-**[2. Data Type and Variables](conditional_statements)**
+**[2. Data Type and Variables](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/data_types_and_variables)**
    - Lab
    - Exercise
    - More exercises
