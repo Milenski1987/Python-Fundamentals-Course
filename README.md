@@ -3,7 +3,7 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
 
 ## Contents:
 
-**[1. Basic Syntax](first_steps_in_coding)**
+**[1. Basic Syntax](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/basic_syntax)**
    - Lab
    - Exercise
    - More exercises
@@ -12,3 +12,4 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
    - Lab
    - Exercise
    - More exercises
+         
