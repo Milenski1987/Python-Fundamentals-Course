@@ -5,9 +5,9 @@ is_terminated = False
 commands = input().split()
 
 for command in commands:
-    if command.startswith("A") and command in team_a:
+    if command in team_a:
         team_a.remove(command)
-    elif command.startswith("B") and command in team_b:
+    elif command in team_b:
         team_b.remove(command)
 
 
