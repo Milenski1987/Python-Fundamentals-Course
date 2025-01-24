@@ -12,4 +12,17 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
    - Lab
    - Exercise
    - More exercises
-         
+
+**[3. List Basics](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/list_basics)**
+   - Lab
+   - Exercise
+   - More exercises
+
+
+
+
+
+
+
+
+
