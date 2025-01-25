@@ -18,11 +18,7 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
    - Exercise
    - More exercises
 
-
-
-
-
-
-
-
-
+**[4. Functions](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/functions)**
+   - Lab
+   - Exercise
+   - More exercises
