@@ -18,8 +18,7 @@ for cell in fire_cells:
             total_fire += cell_value
             water_available -= cell_value
             fire_cell_putted_out.append(cell_value)
-    else:
-        continue
+
 
 print("Cells:")
 for cell in fire_cell_putted_out:
