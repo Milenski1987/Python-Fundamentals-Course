@@ -1,7 +1,7 @@
-def repeat(current_string, repeats):
-    return current_string * repeats
+repeat_string = lambda string, n: string * n
 
 some_string = input()
-string_repeats = int(input())
+counter = int(input())
+result = repeat_string(some_string, counter)
 
-print(repeat(some_string, string_repeats))
+print(result)

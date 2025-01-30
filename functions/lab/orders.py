@@ -1,19 +1,15 @@
 def order_price(product, quantity):
-    total_price = 0
-
     if product == "coffee":
-        total_price = quantity * 1.50
+        return f"{quantity * 1.50:.2f}"
     elif product == "water":
-        total_price = quantity * 1.00
+        return f"{quantity * 1.00:.2f}"
     elif product == "coke":
-        total_price = quantity * 1.40
+        return f"{quantity * 1.40:.2f}"
     elif product == "snacks":
-        total_price = quantity * 2.00
-
-    return f"{total_price:.2f}"
+        return f"{quantity * 2.00:.2f}"
 
 
 product_type = input()
 product_quantity = int(input())
-
-print(order_price(product_type,product_quantity))
+result = order_price(product_type, product_quantity)
+print(result)
