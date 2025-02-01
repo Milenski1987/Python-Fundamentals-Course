@@ -3,22 +3,32 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
 
 ## Contents:
 
-**[1. Basic Syntax](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/basic_syntax)**
+**[Basic Syntax](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/basic_syntax)**
    - Lab
    - Exercise
    - More exercises
      
-**[2. Data Type and Variables](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/data_types_and_variables)**
+**[Data Type and Variables](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/data_types_and_variables)**
    - Lab
    - Exercise
    - More exercises
 
-**[3. List Basics](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/list_basics)**
+**[Lists Basics](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/list_basics)**
    - Lab
    - Exercise
    - More exercises
 
-**[4. Functions](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/functions)**
+**[Functions](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/functions)**
+   - Lab
+   - Exercise
+   - More exercises
+
+**[Lists Advanced](https://github.com/Milenski1987/SoftUni-Python-Fundamentals-Course/tree/main/lists_advanced)**
+   - Lab
+   - Exercise
+   - More exercises
+
+**[Dictionaries]()**
    - Lab
    - Exercise
    - More exercises
