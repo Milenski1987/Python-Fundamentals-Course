@@ -1,16 +1,31 @@
-population = [int(number) for number in input().split(", ")]
-minimum_wealth = int(input())
+def distribution(people: list, poor_threshold: int) -> list:
+    for index in range(len(people)):
+        if people[index] < poor_threshold:
+            difference = poor_threshold - people[index]
+            max_wealth_index = people.index(max(people))
+            people[index] += difference
+            people[max_wealth_index] -= difference
+    return people
 
-for index in range(len(population)):
-    if population[index] < minimum_wealth:
-        difference = minimum_wealth - population[index]
-        max_wealth_index = population.index(max(population))
-        population[index] += difference
-        population[max_wealth_index] -= difference
 
-for element in population:
-    if element < minimum_wealth:
-        print("No equal distribution possible")
-        break
-else:
-    print(population)
+def check_social_distribution(people: list, poor_threshold: int):
+    for element in people:
+        if element < poor_threshold:
+            return "No equal distribution possible"
+    return people
+
+
+def main():
+    population = [int(number) for number in input().split(", ")]
+    minimum_wealth = int(input())
+
+    population = distribution(population, minimum_wealth)
+    result = check_social_distribution(population, minimum_wealth)
+
+    print(result)
+
+
+main()
+
+
+

@@ -1,3 +1,10 @@
+def find_next_version(version: list) -> list:
+    initial_version = "".join(version)
+    updated_version = int(initial_version) + 1
+    return list(str(updated_version))
+
+
 current_version = input().split(".")
-next_version = list(str(int("".join(current_version)) + 1))
-print(".".join(next_version))
+result = find_next_version(current_version)
+
+print(".".join(result))

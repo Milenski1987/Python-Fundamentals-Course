@@ -1,11 +1,27 @@
-elements_list = input().split()
-elements_dictionary = {}
+def create_elements_dictionary(elements_result: dict, elements_data: list) -> dict:
+    for element in elements_data:
+        if element.lower() not in elements_result:
+            elements_result[element.lower()] = 0
+        elements_result[element.lower()] += 1
+    return elements_result
 
-for element in elements_list:
-    if element.lower() not in elements_dictionary:
-        elements_dictionary[element.lower()] = 0
-    elements_dictionary[element.lower()] += 1
+def get_results(elements_result: dict) -> list:
+    result = []
+    for element, occurrence in elements_result.items():
+        if occurrence % 2 != 0:
+            result.append(element)
+    return result
 
-for element, occurrence in elements_dictionary.items():
-    if occurrence % 2 != 0:
-        print(element, end=" ")
+
+def main():
+    elements_list = input().split()
+    elements_dictionary = {}
+
+    elements_dictionary = create_elements_dictionary(elements_dictionary, elements_list)
+    final_result = get_results(elements_dictionary)
+
+    if final_result:
+        print(" ".join(final_result))
+
+
+main()

@@ -1,17 +1,31 @@
-statistic = {}
+def statistics_command(statistics_dictionary) -> str:
+    result = "Products in stock:\n"
+    for product, quantity in statistics_dictionary.items():
+        result += f"- {product}: {quantity}\n"
+    result += f"Total Products: {len(statistics_dictionary)}\nTotal Quantity: {sum(statistics_dictionary.values())}"
+    return result
 
-while True:
-    command = input()
-    if command == "statistics":
-        print("Products in stock:")
-        for product, quantity in statistic.items():
-            print(f"- {product}: {quantity}")
-        print(f"Total Products: {len(statistic)}\nTotal Quantity: {sum(statistic.values())}")
-        break
 
-    product, quantity = command.split(": ")
-    quantity = int(quantity)
+def dictionary_creation(statistics_dictionary: dict, current_product: str, product_quantity: int) -> dict:
+    if current_product not in statistics_dictionary:
+        statistics_dictionary[current_product] = 0
+    statistics_dictionary[current_product] += product_quantity
+    return statistics_dictionary
 
-    if product not in statistic:
-        statistic[product] = 0
-    statistic[product] += quantity
+def main():
+    statistic = {}
+
+    while True:
+        command = input()
+        if command == "statistics":
+            final_result = statistics_command(statistic)
+            print(final_result)
+            break
+
+        product, quantity = command.split(": ")
+        quantity = int(quantity)
+
+        statistic = dictionary_creation(statistic, product, quantity)
+
+
+main()

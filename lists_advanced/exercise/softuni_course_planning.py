@@ -1,20 +1,23 @@
-def add(course, title):
+def add(course: list, title: str) -> list:
     if title not in course:
         course.append(title)
+    return course
 
-def inserting(course, title, idx):
-    if idx in range(len(course)):
+def inserting(course: list, title: str, current_index: int) -> list:
+    if current_index in range(len(course)):
         if title not in course:
-            course.insert(idx, title)
+            course.insert(current_index, title)
+    return course
 
-def removing(course, title):
+def removing(course: list, title: str) -> list:
     lesson_exercise = f"{title}-Exercise"
     if title in course:
         course.remove(title)
         if lesson_exercise in course:
             course.remove(lesson_exercise)
+    return course
 
-def swap(course, first_title, second_title):
+def swap(course: list, first_title: str, second_title: str) -> list:
 
     if first_title in course and second_title in course:
         first_title_index = course.index(first_title)
@@ -36,9 +39,9 @@ def swap(course, first_title, second_title):
         exercise_to_swap = course.pop(second_exercise_index)
         course.insert(first_title_index + 1, exercise_to_swap)
 
+    return course
 
-
-def exercise(course, title):
+def exercise(course: list, title: str) -> list:
     lesson_exercise = f"{title}-Exercise"
     if lesson_exercise not in course:
         if title not in course:
@@ -47,35 +50,41 @@ def exercise(course, title):
         else:
             title_index = course.index(title)
             course.insert(title_index + 1, lesson_exercise)
-
-initial_course = input().split(", ")
-
-while True:
-    command = input()
-    if command == "course start":
-        break
-
-    current_command = command.split(":")
-    action = current_command[0]
-    lesson_title = current_command[1]
+    return course
 
 
-    if action == "Add":
-        add(initial_course, lesson_title)
+def main():
+    initial_course = input().split(", ")
 
-    elif action == "Insert":
-        index = int(current_command[2])
-        inserting(initial_course, lesson_title, index)
+    while True:
+        command = input()
+        if command == "course start":
+            break
 
-    elif action == "Remove":
-        removing(initial_course, lesson_title)
+        current_command = command.split(":")
+        action = current_command[0]
+        lesson_title = current_command[1]
 
-    elif action == "Swap":
-        other_title = current_command[2]
-        swap(initial_course, lesson_title, other_title)
 
-    elif action == "Exercise":
-        exercise(initial_course, lesson_title)
+        if action == "Add":
+            add(initial_course, lesson_title)
 
-for index, value in enumerate(initial_course):
-    print(f"{index + 1}.{value}")
+        elif action == "Insert":
+            index = int(current_command[2])
+            inserting(initial_course, lesson_title, index)
+
+        elif action == "Remove":
+            removing(initial_course, lesson_title)
+
+        elif action == "Swap":
+            other_title = current_command[2]
+            swap(initial_course, lesson_title, other_title)
+
+        elif action == "Exercise":
+            exercise(initial_course, lesson_title)
+
+    for index, value in enumerate(initial_course):
+        print(f"{index + 1}.{value}")
+
+
+main()

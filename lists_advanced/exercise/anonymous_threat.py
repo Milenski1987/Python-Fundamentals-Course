@@ -1,4 +1,4 @@
-def merge(data, first_index, second_index):
+def merge(data: list, first_index: int, second_index: int) -> list:
     if first_index < 0:
         first_index = 0
     if second_index > len(data) - 1:
@@ -8,9 +8,9 @@ def merge(data, first_index, second_index):
     data.insert(first_index, "".join(merged_data))
     return data
 
-def divide(data, idx, parts):
+def divide(data: list, current_index: int, parts: int) -> list:
     divided_item = []
-    item_for_divide = data.pop(idx)
+    item_for_divide = data.pop(current_index)
     elements_to_divide = len(item_for_divide) // parts
 
     if parts > 0:
@@ -24,7 +24,7 @@ def divide(data, idx, parts):
         divided_item.append(item_for_divide)
 
 
-    data = data[:idx] + divided_item + data[idx:]
+    data = data[:current_index] + divided_item + data[current_index:]
     return data
 
 data_array = input().split()

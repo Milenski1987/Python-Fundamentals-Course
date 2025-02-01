@@ -1,12 +1,21 @@
+def create_products_data(products_dictionary: dict, products_list: list) -> dict:
+    for index in range(0, len(products_list), 2):
+        products_dictionary[products_list[index]] = int(products_list[index + 1])
+    return products_dictionary
+
+def check_product_availability(products_dictionary: dict, current_product: str) -> str:
+        if current_product in products_dictionary.keys():
+            return f"We have {products_dictionary[current_product]} of {current_product} left"
+        return f"Sorry, we don't have {current_product}"
+
+
 product_data = input().split()
-products = {}
 searching_for = input().split()
 
-for index in range(0, len(product_data), 2):
-    products[product_data[index]] = int(product_data[index + 1])
+products = {}
+products = create_products_data(products, product_data)
 
 for product in searching_for:
-    if product in products.keys():
-        print(f"We have {products[product]} of {product} left")
-    else:
-        print(f"Sorry, we don't have {product}")
+    result = check_product_availability(products, product)
+
+    print(result)

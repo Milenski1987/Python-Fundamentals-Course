@@ -1,17 +1,22 @@
-to_do_list = [0] * 10
+def list_creation_and_edit() -> list:
+    to_do_list = [0] * 10
 
-while True:
-    command = input()
+    while True:
+        command = input()
 
-    if command == "End":
-        break
+        if command == "End":
+            break
 
-    current_command = command.split("-")
-    importance = int(current_command[0]) - 1
-    note = current_command[1]
+        current_command = command.split("-")
+        importance = int(current_command[0]) - 1
+        note = current_command[1]
 
-    to_do_list.pop(importance)
-    to_do_list.insert(importance, note)
+        to_do_list.pop(importance)
+        to_do_list.insert(importance, note)
 
-result = [note for note in to_do_list if note != 0]
+    return to_do_list
+
+
+final_list = list_creation_and_edit()
+result = [note for note in final_list if note != 0]
 print(result)
