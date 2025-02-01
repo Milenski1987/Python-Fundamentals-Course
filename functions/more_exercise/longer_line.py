@@ -1,12 +1,12 @@
 from math import sqrt, floor
 
 
-def line_length_and_distance_to_center(x1, y1, x2, y2):
+def line_length_and_distance_to_center(x1: int, y1: int, x2: int, y2: int) -> float:
     length = sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
     return length
 
 
-def line_compare():
+def line_compare() -> str:
     first_line_length = line_length_and_distance_to_center(l1p1x, l1p1y, l1p2x, l1p2y)
     second_line_length = line_length_and_distance_to_center(l2p1x, l2p1y, l2p2x, l2p2y)
 
@@ -34,5 +34,7 @@ l2p1x = floor(float(input()))
 l2p1y = floor(float(input()))
 l2p2x = floor(float(input()))
 l2p2y = floor(float(input()))
-print(line_compare())
+result = line_compare()
+
+print(result)
 

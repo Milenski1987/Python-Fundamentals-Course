@@ -1,18 +1,19 @@
-def factorial(number):
-    result = 1
-    for i in range(1, number + 1):
-        result *= i
-    return result
+def calculate_factorial(number: int) -> int:
+    current_result = 1
+    for digit in range(1, number + 1):
+        current_result *= digit
+    return current_result
 
 
-def division():
-    first_factorial = factorial(first_number)
-    second_factorial = factorial(second_number)
+def division(number1: int, number2: int) -> float:
+    first_factorial = calculate_factorial(number1)
+    second_factorial = calculate_factorial(number2)
     return first_factorial / second_factorial
 
 
 first_number = int(input())
 second_number = int(input())
+result = division(first_number, second_number)
 
-print(f"{division():.2f}")
+print(f"{result:.2f}")
 

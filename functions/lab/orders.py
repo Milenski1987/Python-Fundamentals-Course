@@ -1,4 +1,4 @@
-def order_price(product, quantity):
+def order_price(product: str, quantity: int) -> str:
     if product == "coffee":
         return f"{quantity * 1.50:.2f}"
     elif product == "water":
@@ -12,4 +12,5 @@ def order_price(product, quantity):
 product_type = input()
 product_quantity = int(input())
 result = order_price(product_type, product_quantity)
+
 print(result)

@@ -1,16 +1,17 @@
-def calculation(action, num1, num2):
+def calculation(action: str, number1: int, number2: int) -> int:
     if action == "multiply":
-        return num1 * num2
+        return number1 * number2
     elif action == "divide":
-        return num1 // num2
+        return number1 // number2
     elif action == "add":
-        return num1 + num2
+        return number1 + number2
     elif action == "subtract":
-        return num1 - num2
+        return number1 - number2
 
 
 operator = input()
 first_number = int(input())
 second_number = int(input())
 result = calculation(operator, first_number,second_number)
+
 print(result)

@@ -1,4 +1,4 @@
-def grade_in_words(grade):
+def grade_in_words(grade: float) -> str:
     if 2.00 <= grade < 3.00:
         return "Fail"
     elif grade < 3.50:
@@ -13,4 +13,5 @@ def grade_in_words(grade):
 
 grade_in_number = float(input())
 result = grade_in_words(grade_in_number)
+
 print(result)

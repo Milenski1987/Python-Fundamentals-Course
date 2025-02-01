@@ -1,15 +1,16 @@
-def perfect_number(num):
+def perfect_number(current_number: int) -> str:
     divisors_sum = 0
-    for i in range(1, num):
-        if num % i == 0:
-            divisors_sum += i
+    for digit in range(1, current_number):
+        if current_number % digit == 0:
+            divisors_sum += digit
 
-    if divisors_sum == num:
-        print("We have a perfect number!")
-    else:
-        print("It's not so perfect.")
+    if divisors_sum == current_number:
+        return "We have a perfect number!"
+    return "It's not so perfect."
 
 
 number = int(input())
-perfect_number(number)
+result = perfect_number(number)
+
+print(result)
 
