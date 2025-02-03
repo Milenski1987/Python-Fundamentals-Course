@@ -1,23 +1,24 @@
-first_employee_students_per_hour = int(input())
-second_employee_students_per_hour = int(input())
-third_employee_students_per_hour = int(input())
+def time_needed(students_per_hour: int, total_students: int) -> int:
+    time = 0
+    while total_students > 0:
+        time += 1
+        if time % 4 == 0:
+            continue
+        total_students -= students_per_hour
+    return time
 
-number_of_students = int(input())
 
-total_students_per_hour = first_employee_students_per_hour + second_employee_students_per_hour + third_employee_students_per_hour
-hour = 0
+def main():
+    first_employee_efficiency = int(input())
+    second_employee_efficiency = int(input())
+    third_employee_efficiency = int(input())
+    students_count = int(input())
 
-while True:
+    students_handled_per_hour = first_employee_efficiency + second_employee_efficiency + third_employee_efficiency
+    result = time_needed(students_handled_per_hour, students_count)
 
-    if number_of_students <= 0:
-        print(f"Time needed: {hour}h.")
-        break
+    print(f"Time needed: {result}h.")
 
-    hour += 1
 
-    if hour % 4 == 0:
-        continue
-
-    number_of_students -= total_students_per_hour
-
+main()
 

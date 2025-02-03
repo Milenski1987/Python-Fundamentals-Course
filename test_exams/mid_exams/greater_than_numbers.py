@@ -1,18 +1,20 @@
-sequence = [int(number) for number in input().split()]
-result = []
+def average_num(sequence: list) -> int:
+    average_of_sequence = sum(sequence) // len(sequence)
+    return average_of_sequence
 
-average_value_of_sequence = sum(sequence) // len(sequence)
 
-sequence.sort(reverse=True)
-for number in sequence:
-    if number > average_value_of_sequence:
-        result.append(number)
+def main():
+    integers_sequence = [int(number) for number in input().split()]
 
-    if len(result) == 5:
-        break
+    average_number = average_num(integers_sequence)
+    result_sequence = [number for number in integers_sequence if number > average_number]
+    result_sequence.sort(reverse=True)
+    result_sequence = result_sequence[:5]
 
-if result:
-    result.sort(reverse=True)
-    print(*result, sep=" ")
-else:
-    print("No")
+    if result_sequence:
+        print(*result_sequence, sep=" ")
+    else:
+        print("No")
+
+
+main()
