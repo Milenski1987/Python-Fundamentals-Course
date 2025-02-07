@@ -8,6 +8,7 @@ def merge(data: list, first_index: int, second_index: int) -> list:
     data.insert(first_index, "".join(merged_data))
     return data
 
+
 def divide(data: list, current_index: int, parts: int) -> list:
     divided_item = []
     item_for_divide = data.pop(current_index)
@@ -27,25 +28,30 @@ def divide(data: list, current_index: int, parts: int) -> list:
     data = data[:current_index] + divided_item + data[current_index:]
     return data
 
-data_array = input().split()
 
-while True:
-    command = input()
+def main():
+    data_array = input().split()
 
-    if command == "3:1":
-        break
+    while True:
+        command = input()
 
-    current_command = command.split()
-    action = current_command[0]
+        if command == "3:1":
+            break
 
-    if action == "merge":
-        start_index = int(current_command[1])
-        end_index = int(current_command[2])
-        data_array = merge(data_array,start_index,end_index)
+        current_command = command.split()
+        action = current_command[0]
 
-    elif action == "divide":
-        index = int(current_command[1])
-        partitions = int(current_command[2])
-        data_array = divide(data_array, index, partitions)
+        if action == "merge":
+            start_index = int(current_command[1])
+            end_index = int(current_command[2])
+            data_array = merge(data_array,start_index,end_index)
 
-print(" ".join(data_array))
+        elif action == "divide":
+            index = int(current_command[1])
+            partitions = int(current_command[2])
+            data_array = divide(data_array, index, partitions)
+
+    print(" ".join(data_array))
+
+
+main()
