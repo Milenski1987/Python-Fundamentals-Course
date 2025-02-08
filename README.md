@@ -34,7 +34,12 @@ In this repository there are my solutions to tasks from the Python Fundamentals 
    - Exercise
    - More exercises
 
-**[Dictionaries]()**
+**[Dictionaries](https://github.com/Milenski1987/SoftUni-Python-Fundamentals-Course/tree/main/dictionaries)**
+   - Lab
+   - Exercise
+   - More exercises
+
+**[Text Processing](https://github.com/Milenski1987/SoftUni-Python-Fundamentals-Course/tree/main/text_processing)**
    - Lab
    - Exercise
    - More exercises
