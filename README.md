@@ -1,3 +1,9 @@
+
+
+![image](https://github.com/user-attachments/assets/9808eb46-4165-407d-abaa-06c16564d71b)
+
+
+
 In this repository there are my solutions to tasks from the Python Fundamentals course in SoftUni.
 
 
