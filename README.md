@@ -5,20 +5,21 @@
 
 
 ## Python Fundamentals 01.2025
-In this repository there are my solutions to tasks from the Python Fundamentals course.
-Repository is sorted by topics in ascending order of dificulty.
+In this repository, there are my solutions to tasks from the Python Fundamentals course.
+The repository is sorted by topics in ascending order of difficulty.
 
+#### All solutions are provided by [Milen Nikolov](https://www.linkedin.com/in/milen-nikolov-62455034b/)
 
 ## Contents:
 
 **[Basic Syntax](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/basic_syntax)**
-* This is first part of negotiation of Basic Course.
+* This is the first part of the negotiation of the Basic Course.
    - Lab
    - Exercise
    - More exercises
      
 **[Data Type and Variables](https://github.com/Milenski1987/Python-Fundamentals-Homework/tree/main/data_types_and_variables)**
-* This is second part of negotiation of Basic Course.
+* This is the second part of the negotiation of the Basic Course.
    - Lab
    - Exercise
    - More exercises
@@ -36,7 +37,7 @@ Repository is sorted by topics in ascending order of dificulty.
    - More exercises
 
 **[Lists Advanced](https://github.com/Milenski1987/SoftUni-Python-Fundamentals-Course/tree/main/lists_advanced)**
-* Advaced Lists knowledge. Lists comprehensions. List methods.
+* Advanced Lists knowledge. Lists comprehensions. List methods.
    - Lab
    - Exercise
    - More exercises
@@ -52,3 +53,10 @@ Repository is sorted by topics in ascending order of dificulty.
    - Lab
    - Exercise
    - More exercises
+ 
+**[Regular Expressions (RegEx)](https://github.com/Milenski1987/SoftUni-Python-Fundamentals-Course/tree/main/regular_expressions)**
+* RegEx syntax, usage, methods.
+   - Lab
+   - Exercise
+   - More exercises
+
