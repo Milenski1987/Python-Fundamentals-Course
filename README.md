@@ -75,4 +75,8 @@ The repository is sorted by topics in ascending order of difficulty.
     <a href="#"><img alt="GitHub" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Light.svg" title="GitHub" **alt="GitHub" width="40" height="40" ></a>
   &emsp;
     <a href="#"><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Apple-Light.svg" title="Apple" **alt="Apple" width="40" height="40" /></a>
+  &emsp;
+    <a href="#"><img alt="GitHub" src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" title="HTML" **alt="HTML" width="40" height="40" ></a>
+  &emsp;
+    <a href="#"><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/CSS.svg" title="CSS" **alt="CSS" width="40" height="40" /></a>
 </p>
