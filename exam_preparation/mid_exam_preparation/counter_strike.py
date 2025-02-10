@@ -1,10 +1,9 @@
 def reach_enemy(current_energy: int, current_distance: int) -> tuple:
     score = 0
     if current_distance > current_energy:
-        score = 0
-    else:
-        current_energy -= current_distance
-        score = 1
+        return score, current_energy
+    current_energy -= current_distance
+    score = 1
     return score, current_energy
 
 
