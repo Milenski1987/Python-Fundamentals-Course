@@ -1,40 +1,51 @@
-elements = input().split()
-moves_count = 0
+def cheating(count: int, elements: list[str]) -> list[str]:
+    element_to_add = f"-{count}a"
+    index_to_add = len(elements) // 2
+    elements.insert(index_to_add, element_to_add)
+    elements.insert(index_to_add, element_to_add)
+    print("Invalid input! Adding additional elements to the board")
+    return elements
 
-while True:
-    command = input()
 
-    if command == "end":
-        print("Sorry you lose :(")
-        print(" ".join(elements))
-        break
+def memory_game(elements: list[str]) -> tuple:
+    counter = 0
+    while True:
+        command = input()
 
-    moves_count += 1
+        if command == "end":
+            return "Sorry you lose :(", elements
 
-    first_index, second_index = command.split()
-    first_index = int(first_index)
-    second_index = int(second_index)
+        counter += 1
 
-    if first_index == second_index or first_index not in range(len(elements)) or second_index not in range(len(elements)):
-        element_to_add = f"-{moves_count}a"
-        elements.insert(len(elements) // 2, element_to_add)
-        elements.insert(len(elements) // 2, element_to_add)
-        print("Invalid input! Adding additional elements to the board")
-        continue
+        first_index = int(command.split()[0])
+        second_index = int(command.split()[1])
 
-    if elements[first_index] == elements[second_index]:
-        print(f"Congrats! You have found matching elements - {elements[first_index]}!")
+        if first_index == second_index or first_index not in range(len(elements)) or second_index not in range(len(elements)):
+            elements = cheating(counter, elements)
+            continue
 
-        if first_index > second_index:
-            elements.pop(first_index)
-            elements.pop(second_index)
+        if elements[first_index] == elements[second_index]:
+            print(f"Congrats! You have found matching elements - {elements[first_index]}!")
+            if first_index > second_index:
+                elements.pop(first_index)
+                elements.pop(second_index)
+            elif first_index < second_index:
+                elements.pop(second_index)
+                elements.pop(first_index)
         else:
-            elements.pop(second_index)
-            elements.pop(first_index)
+            print("Try again!")
 
-    else:
-        print("Try again!")
+        if not elements:
+            return f"You have won in {counter} turns!", elements
 
-    if not elements:
-        print(f"You have won in {moves_count} turns!")
-        break
+
+
+def main():
+    element_sequence = input().split()
+    message, element_sequence = memory_game(element_sequence)
+    print(message)
+    if element_sequence:
+        print(" ".join(element_sequence))
+
+
+main()
