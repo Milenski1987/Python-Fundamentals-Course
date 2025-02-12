@@ -2,7 +2,7 @@ def shoot(targets: list, index: int, power: int) -> list:
     if index in range(len(targets)):
         targets[index] -= power
         if targets[index] <= 0:
-            targets.pop(index)
+            del targets[index]
     return targets
 
 
