@@ -42,11 +42,7 @@ def treasure_hunt(chest: list[str]):
 
 def check_result(chest: list[str]) -> str:
     if chest:
-        average_gain = 0
-        for item in chest:
-            average_gain += len(item)
-        average_gain = average_gain / len(chest)
-
+        average_gain = sum(len(item) for item in chest) / len(chest)
         return f"Average treasure gain: {average_gain:.2f} pirate credits."
     return "Failed treasure hunt."
 
