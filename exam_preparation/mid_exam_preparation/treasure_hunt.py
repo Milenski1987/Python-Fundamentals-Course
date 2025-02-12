@@ -9,8 +9,7 @@ def loot(current_command: str, chest: list[str]) -> list[str]:
 def drop(current_command: str, chest: list[str]) -> list[str]:
     index = int(current_command.split()[1])
     if index in range(len(chest)):
-        removed_item = chest.pop(index)
-        chest.append(removed_item)
+        chest.append(chest.pop(index))
     return chest
 
 
