@@ -1,34 +1,28 @@
-def loot(chest: list, current_loot: list) -> list:
+def loot(current_command: str, chest: list[str]) -> list[str]:
+    current_loot = current_command.split()[1:]
     for item in current_loot:
         if item not in chest:
             chest.insert(0, item)
     return chest
 
 
-def drop(chest: list, current_index: int) -> list:
-    if current_index in range(len(chest)):
-        removed_item = chest.pop(current_index)
+def drop(current_command: str, chest: list[str]) -> list[str]:
+    index = int(current_command.split()[1])
+    if index in range(len(chest)):
+        removed_item = chest.pop(index)
         chest.append(removed_item)
     return chest
 
 
-def steal(chest: list, counter: int) -> list:
-    stolen_items = chest[-counter:]
-    chest = chest[:-counter]
+def steal(current_command: str, chest: list) -> list[str]:
+    count_items = int(current_command.split()[1])
+    stolen_items = chest[-count_items:]
+    chest = chest[:-count_items]
     print(", ".join(stolen_items))
     return chest
 
 
-def calculate_average_gain(chest: list) -> float:
-    result = 0
-    for item in chest:
-        result += len(item)
-    average = result / len(chest)
-    return average
-
-
-def main():
-    initial_chest = input().split("|")
+def treasure_hunt(chest: list[str]):
 
     while True:
         command = input()
@@ -36,25 +30,34 @@ def main():
         if command == "Yohoho!":
             break
 
-        current_command = command.split()
-        action = current_command[0]
-
+        action = command.split()[0]
         if action == "Loot":
-            picked_loot = current_command[1:]
-            initial_chest = loot(initial_chest, picked_loot)
-
+            chest = loot(command, chest)
         elif action == "Drop":
-            index = int(current_command[1])
-            initial_chest = drop(initial_chest, index)
-
+            chest = drop(command, chest)
         elif action == "Steal":
-            count = int(current_command[1])
-            initial_chest = steal(initial_chest, count)
+            chest = steal(command, chest)
 
-    if initial_chest:
-        print(f"Average treasure gain: {calculate_average_gain(initial_chest):.2f} pirate credits.")
-    else:
-        print("Failed treasure hunt.")
+    return chest
+
+
+def check_result(chest: list[str]) -> str:
+    if chest:
+        average_gain = 0
+        for item in chest:
+            average_gain += len(item)
+        average_gain = average_gain / len(chest)
+
+        return f"Average treasure gain: {average_gain:.2f} pirate credits."
+    return "Failed treasure hunt."
+
+
+def main():
+    treasure_chest = input().split("|")
+    treasure_chest = treasure_hunt(treasure_chest)
+
+    statement = check_result(treasure_chest)
+    print(statement)
 
 
 main()
