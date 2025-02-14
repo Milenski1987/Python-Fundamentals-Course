@@ -1,20 +1,25 @@
-food_quantity = float(input())
-hay_quantity = float(input())
-cover_quantity = float(input())
-pig_weight = float(input())
+def pig_feed(food: float, hay: float, cover: float, weight: float) -> str:
+    for day in range(1, 31):
+        food -= 0.300
+        if day % 2 == 0:
+            hay -= food * 0.05
+        if day % 3 == 0:
+            cover -= weight / 3
 
-for day in range(1, 31):
-    food_quantity -= 0.300
+        if round(food, 2) <= 0 or round(hay, 2) <= 0 or round(cover, 2) <= 0:
+            return "Merry must go to the pet store!"
 
-    if day % 2 == 0:
-        hay_quantity -= food_quantity * 0.05
+    return f"Everything is fine! Puppy is happy! Food: {food:.2f}, Hay: {hay:.2f}, Cover: {cover:.2f}."
 
-    if day % 3 == 0:
-        cover_quantity -= pig_weight / 3
 
-    if food_quantity <= 0 or hay_quantity <= 0 or cover_quantity <= 0:
-        print("Merry must go to the pet store!")
-        break
+def main():
+    food_quantity = float(input())
+    hay_quantity = float(input())
+    cover_quantity = float(input())
+    pig_weight = float(input())
 
-else:
-    print(f"Everything is fine! Puppy is happy! Food: {food_quantity:.2f}, Hay: {hay_quantity:.2f}, Cover: {cover_quantity:.2f}.")
+    result = pig_feed(food_quantity, hay_quantity, cover_quantity, pig_weight)
+    print(result)
+
+
+main()
